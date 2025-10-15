@@ -1,0 +1,238 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-left: #efefef;
+    --accent: #7ea7c9;
+    /* blue ring / headings */
+    --muted: #6b6b6b;
+    --line: #c9d8e3;
+    --paper: #ffffff;
+    --page-padding: 28px;
+    --left-width: 320px;
+    --max-width: 980px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background: #f6f7f8;
+    color: #222;
+}
+
+.cv-wrap {
+    max-width: var(--max-width);
+    margin: 32px auto;
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: var(--left-width) 1fr;
+    box-shadow: 0 8px 30px rgba(20, 30, 40, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* left column */
+.left {
+    background: linear-gradient(180deg, var(--bg-left) 0%, #f3f4f5 100%);
+    padding: 42px 28px;
+    position: relative;
+    min-height: 720px;
+}
+
+/* decorative rounded corner top-left stripe (like the example) */
+.left::before {
+    content: "";
+    position: absolute;
+    right: -48px;
+    top: -48px;
+    width: 180px;
+    height: 120px;
+    background: linear-gradient(90deg, #fff0, rgba(0, 0, 0, 0.02));
+    border-radius: 36px 36px 0 0;
+    transform: rotate(0deg);
+    pointer-events: none;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 6px auto 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) inset;
+    border: 8px solid var(--accent);
+    /* blue ring */
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+}
+
+.left h3 {
+    text-align: center;
+    margin: 10px 0 18px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    color: var(--accent);
+    font-weight: 700;
+    margin: 22px 0 8px;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+}
+
+.profile-text {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.45;
+    text-align: left;
+}
+
+.contact-list {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 6px;
+}
+
+.contact-list a {
+    color: inherit;
+    text-decoration: none;
+    word-break: break-all
+}
+
+.left .small-label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #334;
+    margin-bottom: 6px
+}
+
+/* right column */
+.right {
+    padding: 48px 48px;
+    position: relative;
+}
+
+.name-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.fullname {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 44px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #6b6b6b;
+    margin-top: -4px;
+    font-weight: 500;
+}
+
+.divider {
+    height: 1px;
+    background: var(--line);
+    margin: 20px 0 18px;
+    border-radius: 2px;
+}
+
+h4.section-heading {
+    margin: 6px 0 10px;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.education .school {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.education .sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 12px
+}
+
+ul.bullets {
+    padding-left: 20px;
+    margin: 8px 0 16px
+}
+
+ul.bullets li {
+    margin: 8px 0;
+    color: #222;
+    font-size: 14px
+}
+
+/* two-column groups within right side for spacing */
+.group {
+    margin-bottom: 18px
+}
+
+.skill-label {
+    font-weight: 600;
+    margin-bottom: 8px
+}
+
+/* bottom rule like in the example */
+.bottom-rule {
+    height: 6px;
+    background: #fff;
+    border-top: 1px solid var(--line);
+    margin-top: 20px;
+    border-radius: 4px
+}
+
+/* responsive */
+@media (max-width:900px) {
+    .cv-wrap {
+        grid-template-columns: 1fr;
+        padding-bottom: 28px
+    }
+
+    .left {
+        order: 2;
+        min-height: auto;
+        padding: 28px
+    }
+
+    .right {
+        order: 1;
+        padding: 28px
+    }
+
+    .fullname {
+        font-size: 32px
+    }
+
+    .profile-photo {
+        width: 110px;
+        height: 110px
+    }
+}
